@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="rap">RAP</string>
+    <string name="folklore">FOLKLORE</string>
+    <string name="classic">CLASSIC</string>
+    <string name="jazz">JAZZ</string>
+    <string name="blues">BLUES</string>
+    <string name="soundofmusic">SOUND OF MUSIC</string>
+    <string name="username">USERNAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="accordion">ACCORDION</string>
+    <string name="worldmusic">WORLD MUSIC</string>
+    <string name="andra_sings_cucu_n_bucovina">ANDRA SINGS CUCU N BUCOVINA</string>
+    <string name="sahydursun_sings_salamymny">SAHYDURSUN SINGS SALAMYMNY</string>
+    <string name="folklore_ensemble_timisul_timisoara">FOLKLORE ENSEMBLE TIMISUL TIMISOARA</string>
+    <string name="vishal_dadlani_and_shalmali_kholgade_sing_balam_pickari">VISHAL DADLANI AND SHALMALI KHOLGADE SING BALAM PICKARI</string>
+    <string name="mai_tii_minte_drage_marie_cu_marie_si_marioara">MAI TII MINTE DRAGA MARIE / MARIE SI MARIOARA</string>
+    <string name="dumitru_dobrican_si_dantausi_din_grosi">DUMITRU DOBRICAN SI DANTAUSI DIN GROSI</string>
+
+</resources>
