@@ -29,6 +29,8 @@ public class FolkloreActivity  extends SameiginlegtActivity {
     protected TextView titillLagsins04;
     protected TextView titillLagsins05;
 
+    protected Integer numActivity;
+
     protected Context context;
 
     protected Bundle bundle; // new Bundle();
@@ -58,6 +60,7 @@ public class FolkloreActivity  extends SameiginlegtActivity {
         titillLagsins03 = null;
         titillLagsins04 = null;
         titillLagsins05 = null;
+        numActivity = 0;
     } // public WorldmusicActivity ()
     //
     // SKILGREININGAR FYRIRKOMULAG
@@ -78,6 +81,7 @@ public class FolkloreActivity  extends SameiginlegtActivity {
         intentusGenre = new Intent(context, GenreActivity.class);
         intentusFolklore = new Intent(context, FolkloreActivity.class);
         intentusWorldmusic = new Intent(context, WorldmusicActivity.class);
+        intentusPlayWorldmusic = new Intent(context, PlayWorldmusicActivity.class);
         intentusPlayFolklore = new Intent(context, PlayFolkloreActivity.class);
 
         // BYRJA AD TENGJA HLUSTUN VID ALLT SEM HAEGT ER AD SMELLA A.
@@ -103,13 +107,17 @@ public class FolkloreActivity  extends SameiginlegtActivity {
         titillLagsins04 = findViewById(R.id.textViewMusic004);
         titillLagsins05 = findViewById(R.id.textViewMusic005);
 
+        // music001.setImageResource(R.drawable.icon_balam_pichkari);
         music001.setImageResource(R.drawable.icon_dimitru_dobrican_si_dantausi_din_grosi_2011);
+
         music002.setImageResource(R.drawable.icon_andra_mai_tii_minte_draga_marie_marie_si_marioara_);
         music003.setImageResource(R.drawable.icon_sahydursun_garajayewa_sings_salamymny_);
         music004.setImageResource(R.drawable.icon_sahydursun_garajayewa_sings_salamymny_);
         music005.setImageResource(R.drawable.icon_sahydursun_garajayewa_sings_salamymny_);
 
+        // titillLagsins01.setText(getString(R.string.vishal_dadlani_and_shalmali_kholgade_sing_balam_pickari));
         titillLagsins01.setText(getString(R.string.dumitru_dobrican_si_dantausi_din_grosi));
+
         titillLagsins02.setText(getString(R.string.mai_tii_minte_drage_marie_cu_marie_si_marioara));
         titillLagsins03.setText(getString(R.string.sahydursun_sings_salamymny));
         titillLagsins04.setText(getString(R.string.sahydursun_sings_salamymny));
@@ -130,9 +138,14 @@ public class FolkloreActivity  extends SameiginlegtActivity {
                 // Code here executes on main thread after user presses button
                 music001.setHovered(false);
 
+                // bundle.putInt("select_picture",R.drawable.icon_balam_pichkari);
+                // bundle.putString("select_web_side","http://www.youtube.com/watch?v=Hxy8BZGQ5Jo");
+                // bundle.putString("select_title",getString(R.string.vishal_dadlani_and_shalmali_kholgade_sing_balam_pickari));
+
                 bundle.putInt("select_picture",R.drawable.icon_dimitru_dobrican_si_dantausi_din_grosi_2011);
                 bundle.putString("select_web_side","https://www.youtube.com/watch?v=LUeYoGGluH4");
                 bundle.putString("select_title",getString(R.string.dumitru_dobrican_si_dantausi_din_grosi));
+
 
                 // Fara yfir i naesta ramma.
                 intentusPlayFolklore.putExtras(bundle);
@@ -214,7 +227,7 @@ public class FolkloreActivity  extends SameiginlegtActivity {
                 intentusPlayFolklore.putExtras(bundle);
                 startActivity(intentusPlayFolklore);
 
-                // Loka upphafs-rammann.
+                // Loka upphafs-rammanum.
                 Bless.killApp(true);
                 //
             } // public void onClick(View v)

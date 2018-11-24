@@ -116,7 +116,7 @@ public class PlayFolkloreActivity extends SameiginlegtActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_folklore);
+        setContentView(R.layout.activity_play_worldmusic);
 
         context = this;
 
@@ -125,7 +125,7 @@ public class PlayFolkloreActivity extends SameiginlegtActivity {
         intentusGenre = new Intent(context, GenreActivity.class);
         intentusFolklore = new Intent(context, FolkloreActivity.class);
         intentusWorldmusic = new Intent(context, WorldmusicActivity.class);
-        intentusPlayFolklore = new Intent(context, PlayFolkloreActivity.class);
+        intentusPlayWorldmusic = new Intent(context, PlayWorldmusicActivity.class);
 
         intent = getIntent();
         bundle = intent.getExtras();
