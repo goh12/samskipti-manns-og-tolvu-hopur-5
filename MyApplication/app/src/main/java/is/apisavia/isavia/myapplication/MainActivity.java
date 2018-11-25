@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -14,7 +15,6 @@ import exceptions.EkkertSkjalFinnstException;
 
 import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
 import static is.apisavia.isavia.myapplication.R.id.editTextUsername;
-import static is.apisavia.isavia.myapplication.R.id.imageViewStart;
 
 public class MainActivity extends SameiginlegtActivity {
     // SKILGREININGAR
@@ -25,6 +25,8 @@ public class MainActivity extends SameiginlegtActivity {
     protected ImageButton next = null;
 
     protected Context context = null;
+
+    private ImageButton register;
 
     public MainActivity()
     {
@@ -39,7 +41,10 @@ public class MainActivity extends SameiginlegtActivity {
 
         context = this;
 
-        // Skjarinn verdur ad vera upprett thad kemur best ut annad veldur flaekju i thessu tilfelli
+        register = findViewById(R.id.imageButtonRegister);
+
+
+   /*     // Skjarinn verdur ad vera upprett thad kemur best ut annad veldur flaekju i thessu tilfelli
         setRequestedOrientation(SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
         intentusRegister = new Intent(context, RegisterActivity.class);
@@ -50,12 +55,10 @@ public class MainActivity extends SameiginlegtActivity {
         start = findViewById(imageViewStart);
         username = findViewById(editTextUsername);
         password = findViewById(R.id.editTextPassword);
-        escape = findViewById(R.id.imageButtonEscape);
         next = findViewById(R.id.imageButtonRightArrow);
 
         // UPPHAFS-STILLA OELLU SMELLI-FYRIRKOMULAGID(SETJA INN UPPHAFS-UTLIT ADUR EN SMELLT ER).
         start.setImageResource(R.drawable.ftmjcxxxuvhwvpbaqmsi_kurteisi);
-        escape.setHovered(true);
         next.setHovered(true);
 
         try
@@ -101,15 +104,14 @@ public class MainActivity extends SameiginlegtActivity {
                 //
             } // public void onClick(View v)
         }); // next.setOnClickListener(new View.OnClickListener()
-
-        escape.setOnClickListener(new View.OnClickListener() {
+*/
+        // on click listener til að opna register ham
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                Bless.killApp(true);
-                //
-            } // public void onClick(View v)
-        }); // escape.setOnClickListener(new View.OnClickListener()
-
+                openRegister();
+            }
+        });
         // tengjaHlustun();
 /*
         start.setOnTouchListener((View.OnTouchListener) context);
@@ -140,6 +142,12 @@ public class MainActivity extends SameiginlegtActivity {
         start.setOnTouchListener(clickListener);
         */
     } // void onCreate(Bundle savedInstanceState)
+
+    //fall til að opna register view
+    public void openRegister() {
+        Intent intent = new Intent(context, RegisterActivity.class);
+        startActivity(intent);
+    }
 
 
     // FRAMKVAEMDAR HLUTINN, SEM SMELLT ER OG KEMUR UT SEM UPP-A-KOMU = "EVENT".

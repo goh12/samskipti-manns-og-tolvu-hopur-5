@@ -14,7 +14,6 @@ import exceptions.EkkertSkjalFinnstException;
 
 import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
 import static is.apisavia.isavia.myapplication.R.id.editTextUsername;
-import static is.apisavia.isavia.myapplication.R.id.imageViewStart;
 
 public class RegisterActivity extends SameiginlegtActivity {
 
@@ -47,7 +46,7 @@ public class RegisterActivity extends SameiginlegtActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+/*
         context = this;
 
         // Skjarinn verdur ad vera upprett thad kemur best ut annad veldur flaekju i thessu tilfelli
