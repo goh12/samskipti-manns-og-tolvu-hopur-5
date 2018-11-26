@@ -20,8 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Lorem Ipsum"
-        android:textColor="#fff" />
+        android:text="Lorem Ipsum" />
 
     <TextView
         android:id="@+id/textView2"
@@ -29,8 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="By Tommy Tom"
-        android:textColor="#fff" />
+        android:text="By Tommy Tom"/>
 
     <SeekBar
         android:id="@+id/positionBar"
@@ -47,16 +45,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
-            android:text="0:11"
-            android:textColor="#fff" />
+            android:text="0:11"/>
 
         <TextView
             android:id="@+id/remainingTimeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="240dp"
-            android:text="-1:49"
-            android:textColor="#fff" />
+            android:text="-1:49"/>
     </LinearLayout>
 
     <Button
