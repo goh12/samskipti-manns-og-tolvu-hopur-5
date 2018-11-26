@@ -39,6 +39,7 @@
 
 
             <EditText
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
@@ -94,7 +95,7 @@
                 android:src="@drawable/register_button" />
 
             <ImageButton
-                android:id="@+id/imageButtonRightArrow"
+                android:id="@+id/imageButtonSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"

@@ -1,13 +1,22 @@
 package is.apisavia.isavia.myapplication;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -19,14 +28,15 @@ import static is.apisavia.isavia.myapplication.R.id.editTextUsername;
 public class MainActivity extends SameiginlegtActivity {
     // SKILGREININGAR
     protected ImageView start = null;
-    protected EditText username = null;
-    protected EditText password = null;
+    protected EditText etUsername;
+    protected EditText etPassword;
     protected ImageButton escape = null;
-    protected ImageButton next = null;
 
     protected Context context = null;
 
     private ImageButton register;
+    private ImageButton signIn;
+
 
     public MainActivity()
     {
@@ -41,70 +51,13 @@ public class MainActivity extends SameiginlegtActivity {
 
         context = this;
 
+        final EditText etUsername = (EditText) findViewById(R.id.editTextEmail);
+        final EditText etPassword = (EditText) findViewById(R.id.editTextPassword);
+
         register = findViewById(R.id.imageButtonRegister);
+        signIn = findViewById(R.id.imageButtonSignIn);
 
 
-   /*     // Skjarinn verdur ad vera upprett thad kemur best ut annad veldur flaekju i thessu tilfelli
-        setRequestedOrientation(SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-
-        intentusRegister = new Intent(context, RegisterActivity.class);
-        intentusGenre = new Intent(getApplicationContext(), GenreActivity.class);
-        intentusMain = new Intent(context, MainActivity.class);
-
-        // BYRJA AD TENGJA HLUSTUN VID ALLT SEM HAEGT ER AD SMELLA A.
-        start = findViewById(imageViewStart);
-        username = findViewById(editTextUsername);
-        password = findViewById(R.id.editTextPassword);
-        next = findViewById(R.id.imageButtonRightArrow);
-
-        // UPPHAFS-STILLA OELLU SMELLI-FYRIRKOMULAGID(SETJA INN UPPHAFS-UTLIT ADUR EN SMELLT ER).
-        start.setImageResource(R.drawable.ftmjcxxxuvhwvpbaqmsi_kurteisi);
-        next.setHovered(true);
-
-        try
-        {
-            // Upplysingar um inn-skraning (sjalfgefid i fyrstu = "not yet").
-            registering = lesaSkjal("register");
-        }
-        catch (IOException e)
-        {
-            // Sjalfgefid er enska.
-            registering   = "no";
-        }
-        catch (EkkertSkjalFinnstException e)
-        {
-            // Sjalfgefid er enska.
-            registering   = "no";
-        }
-        catch (Exception ee)
-        {
-            // Sjalfgefid er enska.
-            registering   = "no";
-        }
-        //
-        if(registering.equalsIgnoreCase("no")) {
-            startActivity(intentusRegister);
-            // Loka upphafs-rammann.
-            Bless.killApp(true);
-            //
-        } // if(registering.equalsIgnoreCase("yes"))
-
-
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                // next.setHovered(false);
-
-                // Fara yfir i naesta ramma (GenreActivity.java).
-                // startActivityForResult(intentusGenre, 0);
-                startActivity(intentusGenre);
-
-                // Loka upphafs-rammann.
-                Bless.killApp(true);
-                //
-            } // public void onClick(View v)
-        }); // next.setOnClickListener(new View.OnClickListener()
-*/
         // on click listener til að opna register ham
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,35 +65,49 @@ public class MainActivity extends SameiginlegtActivity {
                 openRegister();
             }
         });
-        // tengjaHlustun();
-/*
-        start.setOnTouchListener((View.OnTouchListener) context);
-        username.setOnTouchListener((View.OnTouchListener) context);
-        password.setOnTouchListener((View.OnTouchListener) context);
-        escape.setOnTouchListener((View.OnTouchListener) context);
-        next.setOnTouchListener((View.OnTouchListener) context);
-*/
 
-
-/*
-        View.OnTouchListener clickListener = new View.OnTouchListener() {
+        // on click listener til að skrá sig inn
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                Toast.makeText(context, "GO TO GENRE!", Toast.LENGTH_LONG).show();
-                next.setHovered(false);
+            public void onClick(View v) {
+                final String username = etUsername.getText().toString();
+                final String password = etPassword.getText().toString();
 
-                // Fara yfir i naesta ramma (GenreActivity.java).
-                //// startActivityForResult(intentusGenre, 0);
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            Log.d("json", response);
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if (success) {
 
-                // Loka upphafs-rammann.
-                //// Bless.killApp(true);
-                //
-                return false;
+                                String name = jsonResponse.getString("name");
 
+                                Intent intent = new Intent(MainActivity.this, GenreActivity.class);
+                                intent.putExtra("name",name); // til að senda nafn til genre
+
+                                MainActivity.this.startActivity(intent);
+
+                            } else {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                builder.setMessage("Login failed")
+                                        .setNegativeButton("Retry",null)
+                                        .create()
+                                        .show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+
+                LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
+                queue.add(loginRequest);
             }
-        };
-        start.setOnTouchListener(clickListener);
-        */
+        });
+
     } // void onCreate(Bundle savedInstanceState)
 
     //fall til að opna register view
@@ -149,130 +116,6 @@ public class MainActivity extends SameiginlegtActivity {
         startActivity(intent);
     }
 
-
-    // FRAMKVAEMDAR HLUTINN, SEM SMELLT ER OG KEMUR UT SEM UPP-A-KOMU = "EVENT".
-
-
-
-    /*
-     * boolean OnTouchListener(View v, MotionEvent event)
-     *
-     * @param v
-     * @param event
-     * @return
-     */
-/*
-    public boolean onTouchListener(View v, MotionEvent event) {
-        //
-        boolean b = false;
-        // final Intent intent = new Intent(this, AipVeljaActivity.class);
-        //
-        //
-        //   TAKKINN SMELLUR NIDUR =>
-        //
-        //
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            if (v == start) {
-                start.setBackgroundResource(R.drawable.ftmjcxxxuvhwvpbaqmsi_kurteisi_velja_);
-                start.setHovered(true);
-            } else if (v == username) {
-                username.setTextColor(0xff0000cc); // Blar.
-                username.setTextSize(12f);
-                username.setHint("@string/username");
-                username.setHovered(true);
-            } else if (v == password) {
-                password.setTextColor(0xff0000cc); // Blar.
-                password.setTextSize(12f);
-                password.setHint("@string/password");
-                password.setHovered(true);
-            } //
-            else if (v == escape) {
-                escape.setHovered(true);
-            } else if (v == next) {
-                next.setHovered(true);
-            } //
-            //
-            else {
-                //
-            } // if(v == lesa)
-            // if(v == isavia) else
-            // if (event.get . . .ACTION_DOWN endar her)
-        } else if (event.getAction() == MotionEvent.ACTION_CANCEL) {
-            if (v == start) {
-                start.setBackgroundResource(R.drawable.ftmjcxxxuvhwvpbaqmsi_kurteisi_velja_);
-                start.setHovered(true);
-            } else if (v == username) {
-                username.setTextColor(0xff0000cc); // Blar.
-                username.setTextSize(12f);
-                username.setHint("@string/username");
-                username.setTextKeepState("@string/username");
-                username.setHovered(true);
-            } else if (v == password) {
-                password.setTextColor(0xff0000cc); // Blar.
-                password.setTextSize(12f);
-                password.setHint("@string/password");
-                password.setHovered(true);
-            } //
-            else if (v == escape) {
-                escape.setHovered(true);
-            } else if (v == next) {
-                next.setHovered(true);
-            } else {
-                //
-            } // if else
-            // if (event.get . . .ACTION_CANCEL )
-        } else if (event.getAction() == MotionEvent.ACTION_UP) {
-            if (v == start) {
-                start.setBackgroundResource(R.drawable.ftmjcxxxuvhwvpbaqmsi_kurteisi);
-                start.setHovered(false);
-            } else if (v == username) {
-                username.setTextColor(0xff0000cc); // Blar.
-                username.setTextSize(12f);
-                username.setHint("@string/username");
-                username.setHovered(false);
-                // Enginn adgerd sem komin er enn-tha.
-            } else if (v == password) {
-                password.setTextColor(0xff0000cc); // Blar.
-                password.setTextSize(12f);
-                password.setHint("@string/password");
-                password.setHovered(false);
-                // Enginn adgerd sem komin er enn-tha.
-            } //
-            else if (v == escape) {
-                escape.setHovered(false);
-
-                // Haetta i forritinu.
-                Bless.killApp(true);
-                //
-            } else if (v == next) {
-                next.setHovered(false);
-
-                // Fara yfir i naesta ramma (GenreActivity.java).
-                startActivityForResult(intentusGenre, 0);
-
-                // Loka upphafs-rammann.
-                Bless.killApp(true);
-                //
-            } else {
-                //
-            } // if else.
-            //
-        } // else if (event.getAction() == MotionEvent.ACTION_UP)
-        //
-        return b;
-    } // public boolean onTouch(View v, MotionEvent event)
-*/
-    /*
-    public void tengjaHlustun()
-    {
-        start.setOnTouchListener((View.OnTouchListener) context);
-        username.setOnTouchListener((View.OnTouchListener) context);
-        password.setOnTouchListener((View.OnTouchListener) context);
-        escape.setOnTouchListener((View.OnTouchListener) context);
-        next.setOnTouchListener((View.OnTouchListener) context);
-        //
-    } // tengjaHlustunExcel
-    */
     //
 } // public class MainActivity
 //.

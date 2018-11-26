@@ -91,28 +91,22 @@
                 android:id="@+id/imageButtonEscape"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25"
+                android:layout_weight="0.33"
                 app:srcCompat="@drawable/gnome_panel_force_quit_36" />
 
             <ImageButton
                 android:id="@+id/imageButtonHome"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25"
+                android:layout_weight="0.33"
                 app:srcCompat="@drawable/home_icon_46x_36y_" />
 
             <ImageButton
                 android:id="@+id/imageButtonLeftArrow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25"
+                android:layout_weight="0.33"
                 app:srcCompat="@drawable/left3green_82x_36y_" />
-            <ImageButton
-                android:id="@+id/imageButtonFavorite"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"
-                app:srcCompat="@drawable/illustration_of_a_red_heart_pv_62x_46y" />
 
         </LinearLayout>
 
