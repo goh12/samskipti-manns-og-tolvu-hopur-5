@@ -81,6 +81,7 @@ public class RegisterActivity extends SameiginlegtActivity {
                 String name = enteredUsername.getText().toString();
                 String email = enteredEmail.getText().toString();
                 String password = enteredPassword.getText().toString();
+                String passwordConfirmed = enteredConfirmPassword.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
@@ -105,9 +106,19 @@ public class RegisterActivity extends SameiginlegtActivity {
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(name,email,password,responseListener);
-                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                queue.add(registerRequest);
+                if (password.equals(passwordConfirmed)) {
+                    RegisterRequest registerRequest = new RegisterRequest(name,email,password,responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+                    queue.add(registerRequest);
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    builder.setMessage("Register failed")
+                            .setNegativeButton("Retry",null)
+                            .create()
+                            .show();
+                }
+
+
             }
         });
 
