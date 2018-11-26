@@ -61,6 +61,8 @@ public class GenreActivity  extends SameiginlegtActivity {
         intentusFolklore = new Intent(context, FolkloreActivity.class);
         intentusWorldmusic = new Intent(context, WorldmusicActivity.class);
 
+        final Intent intentusSongplayer = new Intent(context, SongActivity.class);
+
         // BYRJA AD TENGJA HLUSTUN VID ALLT SEM HAEGT ER AD SMELLA A.
         rammi = findViewById(id.linearLayoutRammi);
 
@@ -104,7 +106,9 @@ public class GenreActivity  extends SameiginlegtActivity {
 
                 // Fara yfir i naesta ramma (GenreActivity.java).
                 // startActivityForResult(intentusGenre, 0);
-                startActivity(intentusMain);
+                //startActivity(intentusMain);
+                startActivity(intentusSongplayer);
+
 
                 // Loka upphafs-rammann.
                 Bless.killApp(true);
