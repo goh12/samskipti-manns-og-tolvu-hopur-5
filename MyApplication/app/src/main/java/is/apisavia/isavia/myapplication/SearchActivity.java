@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,6 +22,10 @@ public class SearchActivity extends AppCompatActivity {
     private EditText search;
     ArrayAdapter<String> adapter;
     ListView listViewSongs;
+
+    //footer variables
+    private ImageButton home;
+    private ImageButton user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,19 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 final Intent intent = new Intent(SearchActivity.this, SongActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // footer activity
+        home = findViewById(R.id.imageButtonHomeScreen);
+        user = findViewById(R.id.imageButtonUser);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, GenreActivity.class);
                 startActivity(intent);
             }
         });
