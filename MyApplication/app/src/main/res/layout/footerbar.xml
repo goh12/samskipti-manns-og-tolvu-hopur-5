@@ -14,26 +14,48 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_gravity="center">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_weight="0.15"
+        android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/imageButtonHomeScreen"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:src="@drawable/home"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:layout_weight="0.33"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:padding="6dp"/>
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/imageButtonSearch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:src="@drawable/search"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:layout_weight="0.33"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:padding="6dp"/>
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/imageButtonUser"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:src="@drawable/if_user_925901"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:layout_weight="0.33"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
+            android:padding="6dp"/>
 
     </LinearLayout>
 

@@ -28,6 +28,11 @@ public class GenreActivity  extends SameiginlegtActivity {
 
     protected Context context;
 
+    //footer variables
+    private ImageButton home;
+    private ImageButton search;
+    private ImageButton user;
+
 
     /**
      * Klasasmidur.
@@ -93,12 +98,12 @@ public class GenreActivity  extends SameiginlegtActivity {
         escape.setHovered(true);
         tilbaka.setHovered(true);
 
-        if(lodrettur == hvernigSnuaSnjallsiminn()) {
+/*        if(lodrettur == hvernigSnuaSnjallsiminn()) {
             rammi.setBackgroundResource(drawable.texture_pattern_design_2_portrait);
         } else {
             rammi.setBackgroundResource(drawable.texture_pattern_design_2_landscape);
         } // if else
-
+*/
         classic.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
@@ -217,6 +222,21 @@ public class GenreActivity  extends SameiginlegtActivity {
                 //
             } // public void onClick(View v)
         }); // escape.setOnClickListener(new View.OnClickListener()
+
+
+        // footer activity
+        home = findViewById(id.imageButtonHomeScreen);
+        search = findViewById(id.imageButtonSearch);
+        user = findViewById(id.imageButtonUser);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GenreActivity.this, SearchActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
     } // void onCreate(Bundle savedInstanceState)
     //
