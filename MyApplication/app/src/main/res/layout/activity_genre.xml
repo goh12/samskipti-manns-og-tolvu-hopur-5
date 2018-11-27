@@ -196,20 +196,6 @@
             android:layout_weight="0.15"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButtonEscape"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                app:srcCompat="@drawable/gnome_panel_force_quit_36" />
-
-            <ImageButton
-                android:id="@+id/imageButtonLeftArrow"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.25"
-                app:srcCompat="@drawable/left3green_164x_36y_" />
-
         </LinearLayout>
 
         <include layout="@layout/footerbar"></include>

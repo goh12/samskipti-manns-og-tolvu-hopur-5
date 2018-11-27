@@ -23,9 +23,6 @@ public class GenreActivity  extends SameiginlegtActivity {
     protected ImageView blues;
     protected ImageView accordion;
 
-    protected ImageButton escape;
-    protected ImageButton tilbaka;
-
     protected Context context;
 
     //footer variables
@@ -45,8 +42,6 @@ public class GenreActivity  extends SameiginlegtActivity {
         folklore = null;
         blues = null;
         accordion = null;
-        escape = null;
-        tilbaka = null;
         context = null;
         worldmusic = null;
         rammi = null;
@@ -78,9 +73,6 @@ public class GenreActivity  extends SameiginlegtActivity {
         blues = findViewById(id.imageViewBlues);
         accordion = findViewById(id.imageViewAccordion);
 
-        escape = findViewById(id.imageButtonEscape);
-        tilbaka = findViewById(id.imageButtonLeftArrow);
-
         classic.setImageResource(drawable.icon_fiddle_classic_styttri);
         jazz.setImageResource(drawable.icon_blues);
         folklore.setImageResource(drawable.icon_belarus_);
@@ -95,8 +87,6 @@ public class GenreActivity  extends SameiginlegtActivity {
         blues.setHovered(true);
         accordion.setHovered(true);
 
-        escape.setHovered(true);
-        tilbaka.setHovered(true);
 
 /*        if(lodrettur == hvernigSnuaSnjallsiminn()) {
             rammi.setBackgroundResource(drawable.texture_pattern_design_2_portrait);
@@ -111,8 +101,7 @@ public class GenreActivity  extends SameiginlegtActivity {
 
                 // Fara yfir i naesta ramma (GenreActivity.java).
                 // startActivityForResult(intentusGenre, 0);
-                //startActivity(intentusMain);
-                startActivity(intentusSongplayer);
+                startActivity(intentusMain);
 
 
                 // Loka upphafs-rammann.
@@ -199,29 +188,6 @@ public class GenreActivity  extends SameiginlegtActivity {
 
 
         // imageViewAccordion
-
-        // FARA TILBAKA TIL UPPHAFS-SIDU. I OEDRUM ROEMMUM VERDUR THAD "HOME" (MYND AF HUSI).
-        tilbaka.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                tilbaka.setHovered(false);
-
-                // Fara yfir i naesta ramma (GenreActivity.java).
-                startActivity(intentusMain);
-
-                // Loka upphafs-rammann.
-                Bless.killApp(true);
-                //
-            } // public void onClick(View v)
-        }); // next.setOnClickListener(new View.OnClickListener()
-
-        escape.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                Bless.killApp(true);
-                //
-            } // public void onClick(View v)
-        }); // escape.setOnClickListener(new View.OnClickListener()
 
 
         // footer activity
