@@ -1,64 +1,25 @@
 package is.apisavia.isavia.myapplication;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.VideoView;
 
-import java.io.File;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 
 public class PlayWorldmusicActivity extends SameiginlegtActivity {
 
-
-
-    protected String       webUrl                        = "";
-    @SuppressWarnings("unused")
-    private static final String TAG                      = "RegisterActivity";
-    public  static final int DIALOG_DOWNLOAD_PROGRESS    = 0;
-    private static final int REQUEST_CODE                = 10;
-    //
-    // titill... inniheldur nuverandi vefslod a hverjum tima.
-    protected final Activity titillAllraEfst             = this;
-
-
-
-
-    protected Uri          uriIsavia                     = null;
-    //
-    protected WebView      wv                            = null;
-
-    //
-    //// protected ImageView    bidmynd                       = null;
-    //
-    protected URL          url                           = null; // Nytt fra Alnetinu.
-    protected URL          kurl                          = null; // Aip skjol ur skjalageymslunni.
-    protected HttpURLConnection con                      = null;
-    //
-    protected File         extStorageAppBasePath         = null;
-    protected File         extStorageAppCachePath        = null;
-
-
-
     // SKILGREININGAR
     protected ImageView listen;
-    protected VideoView showVidio;
 
     protected ImageButton escape;
     protected ImageButton home;
     protected ImageButton tilbaka;
-    protected ImageButton favorite;
 
     protected TextView titillLagsins;
 
@@ -73,14 +34,11 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
 
     protected String tegund;
 
-    protected Integer numActivity;
-
     protected InputStream is;
 
-    protected Bundle bundle; // new Bundle();
-    protected Intent intent; // new Intent(getApplicationContext(), secondActivity.class);
+    protected Bundle bundle;
+    protected Intent intent;
     private View v;
-    private MotionEvent event;
 
     private boolean isFavorite;
 
@@ -99,26 +57,34 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
         vefhlekkur = "";
         vistaVefhlekk = "";
         heimasidaFyrirVefHlekk = "";
+
         tegund = "";
+
         is = null;
         titillLagsins = null;
+
         bundle = null;
         intent = null;
+
         veljaTexta = "";
         veljaMynd = 0;
-        favorite = null;
+
         isFavorite = false;
-        numActivity = 0;
+
+        //
     } // public WorldmusicActivity ()
     //
-    // SKILGREININGAR FYRIRKOMULAG
 
+    // SKILGREININGAR FYRIRKOMULAG.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_worldmusic);
 
         context = this;
+
+        bundle = new Bundle();
+        intent = new Intent(getApplicationContext(), WorldmusicActivity.class);
 
         intentusRegister = new Intent(context, RegisterActivity.class);
         intentusMain = new Intent(context, MainActivity.class);
@@ -130,6 +96,7 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
         intent = getIntent();
         bundle = intent.getExtras();
 
+        isFavorite = bundle.getBoolean("is_favorite", false);
         veljaMynd = bundle.getInt("select_picture");
         vefhlekkur = bundle.getString("select_web_side");
         veljaTexta = bundle.getString("select_title");
@@ -139,7 +106,7 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
         escape = findViewById(R.id.imageButtonEscape);
         home =  findViewById(R.id.imageButtonHome);
         tilbaka = findViewById(R.id.imageButtonLeftArrow);
-        favorite = findViewById(R.id.imageButtonFavorite);
+        // favorite = findViewById(R.id.imageButtonFavorite);
 
         titillLagsins = findViewById(R.id.textViewMusic001);
 
@@ -151,18 +118,21 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
         escape.setHovered(true);
         home.setHovered(true);
         tilbaka.setHovered(true);
-        favorite.setHovered(true);
+        // favorite.setHovered(true);
+
+        if(isFavorite) {
+            listen.setColorFilter(0xaa00ff00);
+        } else {
+            listen.clearColorFilter();
+        } // if(isColored.equals("0xaa00ff00"))
 
         // Hlusta a valid lag af listanum.
         listen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                listen.setColorFilter(0xaa00ff00);
                 listen.setHovered(false);
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse(vefhlekkur)));
-
-                listen.clearColorFilter();
 
                 // Notandinn kemur hingad tilbaka um leid og vidkomandi haettir ad hlusta i YouTube.
                 //
@@ -174,11 +144,7 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 tilbaka.setHovered(false);
-
-                // Fara tilbaka i WorldmusicActivity.java.
                 startActivity(intentusWorldmusic);
-                // listen.setColorFilter(0xaa00ff00);
-                listen.clearColorFilter();
                 Bless.killApp(true);
                 //
             } // public void onClick(View v)
@@ -199,8 +165,6 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
             } // public void onClick(View v)
         }); // next.setOnClickListener(new View.OnClickListener()
 
-        // imageButtonHome
-
         escape.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
@@ -208,30 +172,7 @@ public class PlayWorldmusicActivity extends SameiginlegtActivity {
                 //
             } // public void onClick(View v)
         }); // escape.setOnClickListener(new View.OnClickListener()
-
-
-        favorite.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                favorite.setHovered(false);
-
-                if(isFavorite) {
-                    listen.clearColorFilter();
-                    isFavorite = false;
-                } else {
-                    listen.setColorFilter(0xaa00ff00);
-                    isFavorite = true;
-                } // if(isColored.equals("0xaa00ff00"))
-
-                // listen.clearColorFilter();
-                // finishActivity(0);
-                // Notandinn kemur hingad tilbaka um leid og vidkomandi haettir ad hlusta i YouTube.
-                //
-            } // public void onClick(View v)
-        }); // next.setOnClickListener(new View.OnClickListener()
-
-
-
+          //
         //
     } // void onCreate(Bundle savedInstanceState)
     //

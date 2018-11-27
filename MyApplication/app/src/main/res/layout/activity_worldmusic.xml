@@ -7,7 +7,7 @@
     tools:context=".RegisterActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayoutRAmmi"
+        android:id="@+id/linearLayoutRammi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/texture_pattern_design_14_portrait"
@@ -204,13 +204,140 @@
 
                 </LinearLayout>
 
-                <!-- List View -->
-                <!-- EFTIR AD VINNA THETTA VERK MED LIST-VIEW
-                <ListView
-                    android:id="@+id/list_view"
+                <LinearLayout
+                    android:id="@+id/linearLayoutFavorite01"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
-                -->
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawSelectorOnTop="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textViewMusicFavorite01"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_weight="0.25" />
+
+                    <ImageView
+                        android:id="@+id/imageViewMusicFavorite01"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFavorite02"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawSelectorOnTop="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textViewMusicFavorite02"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_weight="0.25" />
+
+                    <ImageView
+                        android:id="@+id/imageViewMusicFavorite02"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFavorite03"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawSelectorOnTop="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textViewMusicFavorite03"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_weight="0.25" />
+
+                    <ImageView
+                        android:id="@+id/imageViewMusicFavorite03"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFavorite04"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawSelectorOnTop="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textViewMusicFavorite04"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_weight="0.25" />
+
+                    <ImageView
+                        android:id="@+id/imageViewMusicFavorite04"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutFavorite05"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawSelectorOnTop="false"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textViewMusicFavorite05"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_weight="0.25" />
+
+                    <ImageView
+                        android:id="@+id/imageViewMusicFavorite05"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75" />
+
+                </LinearLayout>
 
             </LinearLayout>
 

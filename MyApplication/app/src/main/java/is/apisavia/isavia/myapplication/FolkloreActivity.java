@@ -74,7 +74,7 @@ public class FolkloreActivity  extends SameiginlegtActivity {
         rammi = new LinearLayout(context);
 
         bundle = new Bundle();
-        intent = new Intent(getApplicationContext(), PlayWorldmusicActivity.class);
+        intent = new Intent(getApplicationContext(), PlayFolkloreActivity.class);
 
         intentusRegister = new Intent(context, RegisterActivity.class);
         intentusMain = new Intent(context, MainActivity.class);
