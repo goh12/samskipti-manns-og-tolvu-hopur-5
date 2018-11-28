@@ -84,7 +84,7 @@ public class MainActivity extends SameiginlegtActivity {
 
                                 String name = jsonResponse.getString("name");
 
-                                Intent intent = new Intent(MainActivity.this, GenreActivity.class);
+                                Intent intent = new Intent(MainActivity.this, HotActivity.class);
                                 intent.putExtra("name",name); // til að senda nafn til genre
 
                                 MainActivity.this.startActivity(intent);

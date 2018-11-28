@@ -77,6 +77,7 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        Log.d("String", "heyo");
         // click handler fyrir favorite
         tbFavorite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -90,7 +91,6 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-
         // footer activity
         home = findViewById(R.id.imageButtonHomeScreen);
         user = findViewById(R.id.imageButtonUser);
@@ -98,7 +98,7 @@ public class SearchActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, GenreActivity.class);
+                Intent intent = new Intent(SearchActivity.this, HotActivity.class);
                 startActivity(intent);
             }
         });
@@ -126,6 +126,6 @@ public class SearchActivity extends AppCompatActivity {
             }
         }
 
-        adapter.notifyDataSetChanged();;
+        adapter.notifyDataSetChanged();
     }
 }

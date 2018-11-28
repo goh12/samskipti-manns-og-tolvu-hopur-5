@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/footer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="What's Hot!"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/aviciiBtn"
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/avicii"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Avicii"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/worldBtn"
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_world_music"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="WorldMusic"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <ImageButton
+                    android:id="@+id/christmasBtn"
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/christmas"
+                    android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Christmas"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/folkLoreBtn"
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:src="@drawable/icon_belarus_"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Folklore"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            layout="@layout/footerbar"
+            android:id="@+id/footer" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
