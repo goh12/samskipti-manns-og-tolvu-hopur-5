@@ -70,7 +70,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlaylistActivity" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".UserActivity"></activity>
     </application>
 
 </manifest>

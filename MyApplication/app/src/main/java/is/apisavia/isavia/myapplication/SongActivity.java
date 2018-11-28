@@ -132,6 +132,14 @@ public class SongActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SongActivity.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private Handler handler = new Handler() {

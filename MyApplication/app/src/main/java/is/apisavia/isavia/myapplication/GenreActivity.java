@@ -204,6 +204,14 @@ public class GenreActivity  extends SameiginlegtActivity {
             }
         });
 
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GenreActivity.this, UserActivity.class);
+                startActivity(intent);
+            }
+        });
+
     } // void onCreate(Bundle savedInstanceState)
     //
 } // public GenreActivity()

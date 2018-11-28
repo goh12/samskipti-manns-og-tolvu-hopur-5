@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,16 +29,23 @@ public class SearchActivity extends AppCompatActivity {
     //footer variables
     private ImageButton home;
     private ImageButton user;
+    private ToggleButton tbFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.row_layout);
+        tbFavorite = (ToggleButton) findViewById(R.id.tbToggleFav);
+
         setContentView(R.layout.activity_search);
 
         listViewSongs = (ListView) findViewById(R.id.songlist);
         search = (EditText) findViewById(R.id.search);
 
         songTitleListMethod();
+
+
 
         search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -67,6 +77,19 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        // click handler fyrir favorite
+        tbFavorite.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.d("clicked", "is this clicked");
+                if (isChecked) {
+                    tbFavorite.setBackgroundResource(R.drawable.heart_filled);
+                } else {
+                    tbFavorite.setBackgroundResource(R.drawable.heart);
+                }
+            }
+        });
+
 
         // footer activity
         home = findViewById(R.id.imageButtonHomeScreen);
@@ -76,6 +99,14 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SearchActivity.this, GenreActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchActivity.this, UserActivity.class);
                 startActivity(intent);
             }
         });

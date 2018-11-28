@@ -793,6 +793,98 @@ public class WorldmusicActivity  extends SameiginlegtActivity {
             } // public void onClick(View v)
         }); // next.setOnClickListener(new View.OnClickListener()
 
+
+        titillLagsinsFavorite01.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                bundle.putBoolean("is_favorite",isFavorite01);
+                bundle.putInt("select_picture",R.drawable.icon_balam_pichkari);
+                bundle.putString("select_web_side","http://www.youtube.com/watch?v=Hxy8BZGQ5Jo");
+                bundle.putString("select_title",getString(R.string.vishal_dadlani_and_shalmali_kholgade_sing_balam_pickari));
+
+                // Fara yfir i naesta ramma.
+                intentusPlayWorldmusic.putExtras(bundle);
+                startActivity(intentusPlayWorldmusic);
+
+                // Loka upphafs-rammanum.
+                Bless.killApp(true);
+                //
+                //
+            } // public void onClick(View v)
+        }); // next.setOnClickListener(new View.OnClickListener()
+
+        titillLagsinsFavorite02.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                bundle.putBoolean("is_favorite",isFavorite02);
+                bundle.putInt("select_picture",R.drawable.icon_andra_mai_tii_minte_draga_marie_marie_si_marioara_);
+                bundle.putString("select_web_side","https://www.youtube.com/watch?v=amYYTJ0tAfk");
+                bundle.putString("select_title",getString(R.string.mai_tii_minte_drage_marie_cu_marie_si_marioara));
+
+                // Fara yfir i naesta ramma.
+                intentusPlayWorldmusic.putExtras(bundle);
+                startActivity(intentusPlayWorldmusic);
+
+                // Loka upphafs-rammanum.
+                Bless.killApp(true);
+                //
+                //
+            } // public void onClick(View v)
+        }); // next.setOnClickListener(new View.OnClickListener()
+
+        titillLagsinsFavorite03.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                bundle.putBoolean("is_favorite",isFavorite03);
+                bundle.putInt("select_picture",R.drawable.icon_sahydursun_garajayewa_sings_salamymny_);
+                bundle.putString("select_web_side","https://hah.life/video/ylJCWcXK2jZA/-/Sahydursun%20garaja%C3%BDewa%20-%20Salamymny");
+                bundle.putString("select_title",getString(R.string.sahydursun_sings_salamymny));
+
+                // Fara yfir i naesta ramma.
+                intentusPlayWorldmusic.putExtras(bundle);
+                startActivity(intentusPlayWorldmusic);
+
+                // Loka upphafs-rammanum.
+                Bless.killApp(true);
+                //
+                //
+            } // public void onClick(View v)
+        }); // next.setOnClickListener(new View.OnClickListener()
+
+        titillLagsinsFavorite04.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                bundle.putBoolean("is_favorite",isFavorite04);
+                bundle.putInt("select_picture",R.drawable.icon_sahydursun_garajayewa_sings_salamymny_);
+                bundle.putString("select_web_side","https://hah.life/video/ylJCWcXK2jZA/-/Sahydursun%20garaja%C3%BDewa%20-%20Salamymny");
+                bundle.putString("select_title",getString(R.string.sahydursun_sings_salamymny));
+
+                // Fara yfir i naesta ramma.
+                intentusPlayWorldmusic.putExtras(bundle);
+                startActivity(intentusPlayWorldmusic);
+
+                // Loka upphafs-rammanum.
+                Bless.killApp(true);
+                //
+                //
+            } // public void onClick(View v)
+        }); // next.setOnClickListener(new View.OnClickListener()
+
+        titillLagsinsFavorite05.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                bundle.putBoolean("is_favorite",isFavorite05);
+                bundle.putInt("select_picture",R.drawable.icon_sahydursun_garajayewa_sings_salamymny_);
+                bundle.putString("select_web_side","https://hah.life/video/ylJCWcXK2jZA/-/Sahydursun%20garaja%C3%BDewa%20-%20Salamymny");
+                bundle.putString("select_title",getString(R.string.sahydursun_sings_salamymny));
+
+                // Fara yfir i naesta ramma.
+                intentusPlayWorldmusic.putExtras(bundle);
+                startActivity(intentusPlayWorldmusic);
+
+                // Loka upphafs-rammanum.
+                Bless.killApp(true);
+                //
+                //
+            } // public void onClick(View v)
+        }); // next.setOnClickListener(new View.OnClickListener()
+
+
         // FARA TILBAKA TIL GENRE (MYND AF VINSTRI OER).
         tilbaka.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
