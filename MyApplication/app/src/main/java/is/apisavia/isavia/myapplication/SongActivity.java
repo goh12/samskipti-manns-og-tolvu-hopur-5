@@ -16,12 +16,16 @@ import android.widget.TextView;
 public class SongActivity extends AppCompatActivity {
 
     Button playBtn;
+    Button nextBtn;
+    Button prevBtn;
     SeekBar positionBar;
     SeekBar volumeBar;
     TextView elapsedTimeLabel;
     TextView remainingTimeLabel;
     MediaPlayer mp;
     int totalTime;
+
+    private TextView tvTitle;
 
     //footer variables
     private ImageButton home;
@@ -34,6 +38,10 @@ public class SongActivity extends AppCompatActivity {
         setContentView(R.layout.activity_songplayer);
 
         playBtn = (Button) findViewById(R.id.playBtn);
+        nextBtn = (Button) findViewById(R.id.nextBtn);
+        prevBtn = (Button) findViewById(R.id.prevBtn);
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
+
         elapsedTimeLabel = (TextView) findViewById(R.id.elapsedTimeLabel);
         remainingTimeLabel = (TextView) findViewById(R.id.remainingTimeLabel);
 
@@ -140,6 +148,37 @@ public class SongActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        prevBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvTitle.getText().toString().equals("Lorem Ipsum")) {
+                    tvTitle.setText("Fun Song");
+                    positionBar.setProgress(0);
+                    mp.seekTo(0);
+                } else {
+                    tvTitle.setText("Lorem Ipsum");
+                    positionBar.setProgress(0);
+                    mp.seekTo(0);
+                }
+            }
+        });
+
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (tvTitle.getText().toString().equals("Lorem Ipsum")) {
+                    tvTitle.setText("Fun Song");
+                    positionBar.setProgress(0);
+                    mp.seekTo(0);
+                } else {
+                    tvTitle.setText("Lorem Ipsum");
+                    positionBar.setProgress(0);
+                    mp.seekTo(0);
+                }
+            }
+        });
     }
 
     private Handler handler = new Handler() {
@@ -184,6 +223,5 @@ public class SongActivity extends AppCompatActivity {
         }
 
     }
-
 
 }

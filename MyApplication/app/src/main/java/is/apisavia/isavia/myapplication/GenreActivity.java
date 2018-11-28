@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.lang.reflect.GenericArrayType;
+
 import static is.apisavia.isavia.myapplication.R.*;
 
 
@@ -101,7 +103,9 @@ public class GenreActivity  extends SameiginlegtActivity {
 
                 // Fara yfir i naesta ramma (GenreActivity.java).
                 // startActivityForResult(intentusGenre, 0);
-                startActivity(intentusMain);
+
+                Intent intent = new Intent(GenreActivity.this, PlaylistActivity.class);
+                startActivity(intent);
 
 
                 // Loka upphafs-rammann.
@@ -117,7 +121,8 @@ public class GenreActivity  extends SameiginlegtActivity {
 
                 // Fara yfir i naesta ramma (GenreActivity.java).
                 // startActivityForResult(intentusGenre, 0);
-                startActivity(intentusMain);
+                Intent intent = new Intent(GenreActivity.this, PlaylistActivity.class);
+                startActivity(intent);
 
                 // Loka upphafs-rammann.
                 Bless.killApp(true);
@@ -162,7 +167,8 @@ public class GenreActivity  extends SameiginlegtActivity {
 
                 // Fara yfir i naesta ramma (GenreActivity.java).
                 // startActivityForResult(intentusGenre, 0);
-                startActivity(intentusMain);
+                Intent intent = new Intent(GenreActivity.this, PlaylistActivity.class);
+                startActivity(intent);
 
                 // Loka upphafs-rammann.
                 Bless.killApp(true);
@@ -177,7 +183,8 @@ public class GenreActivity  extends SameiginlegtActivity {
 
                 // Fara yfir i naesta ramma (GenreActivity.java).
                 // startActivityForResult(intentusGenre, 0);
-                startActivity(intentusMain);
+                Intent intent = new Intent(GenreActivity.this, PlaylistActivity.class);
+                startActivity(intent);
 
                 // Loka upphafs-rammann.
                 Bless.killApp(true);
