@@ -79,45 +79,26 @@
 
             <Button
                 android:id="@+id/prevBtn"
-<<<<<<< HEAD
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-=======
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:layout_margin="30dp"
->>>>>>> d41c00819aae32fdab5c41c6aed9f325b30dd1d5
                 android:background="@drawable/previous" />
 
             <Button
                 android:id="@+id/playBtn"
-<<<<<<< HEAD
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-=======
                 android:layout_width="45dp"
                 android:layout_height="45dp"
->>>>>>> d41c00819aae32fdab5c41c6aed9f325b30dd1d5
                 android:layout_gravity="center"
                 android:background="@drawable/play"
                 android:onClick="playBtnClick" />
 
             <Button
                 android:id="@+id/nextBtn"
-<<<<<<< HEAD
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-=======
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:layout_margin="30dp"
->>>>>>> d41c00819aae32fdab5c41c6aed9f325b30dd1d5
                 android:background="@drawable/next" />
 
 
@@ -126,7 +107,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:gravity="center"
             android:orientation="horizontal">
 
