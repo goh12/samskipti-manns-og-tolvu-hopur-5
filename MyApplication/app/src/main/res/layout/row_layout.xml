@@ -28,7 +28,8 @@
                     android:layout_height="wrap_content"
                     android:padding="8dp"
                     android:textSize="16sp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:textColor="#fff"/>
 
             </FrameLayout>
 
@@ -42,14 +43,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:layout_gravity="left|top"/>
+                    android:layout_gravity="left|top"
+                    android:textColor="#fff"/>
 
                 <TextView
                     android:id="@+id/volume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:layout_gravity="right|top"/>
+                    android:layout_gravity="right|top"
+                    android:textColor="#fff"/>
 
             </FrameLayout>
 

@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlaylistPageActivity">
+    tools:context=".PlaylistPageActivity"
+    android:background="@drawable/login_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="531dp">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -18,8 +21,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView"
@@ -27,6 +30,7 @@
                     android:layout_height="wrap_content"
                     android:text="My Playlists"
                     android:textAlignment="center"
+                    android:textColor="#fff"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -35,8 +39,8 @@
                     android:layout_width="216dp"
                     android:layout_height="142dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/party"
-                    android:scaleType="fitCenter" />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/party" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -44,17 +48,17 @@
                     android:layout_height="wrap_content"
                     android:text="Party2018"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="#fff"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <ImageButton
                     android:id="@+id/housebtn"
                     android:layout_width="216dp"
                     android:layout_height="142dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/housemusic"
-                    android:scaleType="fitCenter"  />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/housemusic" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -62,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:text="House Stuff"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -71,8 +75,8 @@
                     android:layout_width="216dp"
                     android:layout_height="142dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/jazzpic"
-                    android:scaleType="fitCenter"  />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/jazzpic" />
 
                 <TextView
                     android:id="@+id/textView9"
@@ -80,14 +84,15 @@
                     android:layout_height="wrap_content"
                     android:text="Best of Jazz"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="#fff"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
         </ScrollView>
+
         <include
-            layout="@layout/footerbar"
-            android:id="@+id/footer" />
+            android:id="@+id/footer"
+            layout="@layout/footerbar" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

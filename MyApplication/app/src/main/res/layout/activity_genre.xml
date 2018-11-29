@@ -10,7 +10,8 @@
         android:id="@+id/linearLayoutRammi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/login_background">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -41,7 +42,8 @@
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:textSize="32sp"
-                        android:text="@string/classic" />
+                        android:text="@string/classic"
+                        android:textColor="#fff"/>
 
                     <Space
                         android:layout_width="match_parent"
@@ -70,7 +72,8 @@
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:textSize="32sp"
-                        android:text="@string/jazz" />
+                        android:text="@string/jazz"
+                        android:textColor="#fff"/>
 
                     <Space
                         android:layout_width="match_parent"
@@ -95,7 +98,8 @@
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:textSize="32sp"
-                        android:text="@string/folklore" />
+                        android:text="@string/folklore"
+                        android:textColor="#fff"/>
 
                     <Space
                         android:layout_width="match_parent"
@@ -124,7 +128,8 @@
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:textSize="32sp"
-                        android:text="@string/worldmusic" />
+                        android:text="@string/worldmusic"
+                        android:textColor="#fff" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -149,7 +154,8 @@
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:textSize="32sp"
-                        android:text="@string/blues" />
+                        android:text="@string/blues"
+                        android:textColor="#fff"/>
 
                     <Space
                         android:layout_width="match_parent"
@@ -174,7 +180,8 @@
                         android:textAlignment="center"
                         android:textStyle="bold"
                         android:textSize="32sp"
-                        android:text="@string/accordion" />
+                        android:text="@string/accordion"
+                        android:textColor="#fff"/>
 
                     <Space
                         android:layout_width="match_parent"

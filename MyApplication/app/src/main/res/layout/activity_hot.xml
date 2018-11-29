@@ -5,7 +5,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -24,7 +25,8 @@
                     android:gravity="center"
                     android:text="What's Hot!"
                     android:textSize="30dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
 
                 <ImageButton
                     android:id="@+id/aviciiBtn"
@@ -39,7 +41,8 @@
                     android:gravity="center"
                     android:text="Avicii"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
 
                 <ImageButton
                     android:id="@+id/worldBtn"
@@ -54,7 +57,8 @@
                     android:gravity="center"
                     android:text="WorldMusic"
                     android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
                 <ImageButton
                     android:id="@+id/christmasBtn"
                     android:layout_width="216dp"
@@ -69,7 +73,8 @@
                     android:gravity="center"
                     android:text="Christmas"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
 
                 <ImageButton
                     android:id="@+id/folkLoreBtn"
@@ -84,7 +89,8 @@
                     android:gravity="center"
                     android:text="Folklore"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="#fff"/>
             </LinearLayout>
         </ScrollView>
 
