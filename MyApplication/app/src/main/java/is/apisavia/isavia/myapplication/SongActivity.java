@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -130,6 +131,8 @@ public class SongActivity extends AppCompatActivity {
                 Intent intent = new Intent(SongActivity.this, SearchActivity.class);
 
                 startActivity(intent);
+                mp.stop();
+                finish();
             }
         });
 
@@ -138,6 +141,8 @@ public class SongActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SongActivity.this, HotActivity.class);
                 startActivity(intent);
+                mp.stop();
+                finish();
             }
         });
 
@@ -146,6 +151,8 @@ public class SongActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SongActivity.this, Userpage.class);
                 startActivity(intent);
+                mp.stop();
+                finish();
             }
         });
 
@@ -224,4 +231,14 @@ public class SongActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            mp.stop();
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
