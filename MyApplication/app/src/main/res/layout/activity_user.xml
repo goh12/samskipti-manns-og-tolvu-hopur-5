@@ -15,9 +15,9 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Home Page"
-            android:textSize="24sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="User home page"
+            android:textSize="24sp" />
 
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_margin="10dp"
             android:text="My Favorites"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/songlist"

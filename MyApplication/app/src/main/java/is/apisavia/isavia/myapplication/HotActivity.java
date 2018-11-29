@@ -87,7 +87,7 @@ public class HotActivity extends AppCompatActivity {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotActivity.this, UserActivity.class);
+                Intent intent = new Intent(HotActivity.this, Userpage.class);
                 startActivity(intent);
             }
         });

@@ -144,7 +144,7 @@ public class SongActivity extends AppCompatActivity {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SongActivity.this, UserActivity.class);
+                Intent intent = new Intent(SongActivity.this, Userpage.class);
                 startActivity(intent);
             }
         });

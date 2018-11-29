@@ -71,8 +71,10 @@
         </activity>
         <activity android:name=".PlaylistActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".UserActivity"></activity>
-        <activity android:name=".HotActivity"></activity>
+        <activity android:name=".UserActivity" />
+        <activity android:name=".HotActivity" />
+        <activity android:name=".Userpage" />
+        <activity android:name=".PlaylistPageActivity"></activity>
     </application>
 
 </manifest>
