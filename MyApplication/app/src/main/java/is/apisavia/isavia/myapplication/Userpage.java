@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class Userpage extends AppCompatActivity {
 
     private Button favorite;
     private Button playlist;
     private Button artists;
+    private ImageButton home, search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,27 @@ public class Userpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // footer activity
+        home = findViewById(R.id.imageButtonHomeScreen);
+        search = findViewById(R.id.imageButtonSearch);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Userpage.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Userpage.this, HotActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

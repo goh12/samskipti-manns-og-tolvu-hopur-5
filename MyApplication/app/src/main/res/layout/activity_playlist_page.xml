@@ -12,7 +12,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_above="@+id/footer">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,6 +79,8 @@
 
             </LinearLayout>
         </ScrollView>
-
+        <include
+            layout="@layout/footerbar"
+            android:id="@+id/footer" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

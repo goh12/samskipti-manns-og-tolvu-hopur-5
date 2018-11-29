@@ -8,10 +8,9 @@ import android.widget.ImageButton;
 
 public class PlaylistPageActivity extends AppCompatActivity {
 
-    private ImageButton home;
-    private ImageButton search;
-    private ImageButton user;
+    private ImageButton home, search ,user;
     private ImageButton party, house, jazz;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +44,36 @@ public class PlaylistPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // footer activity
+        home = findViewById(R.id.imageButtonHomeScreen);
+        search = findViewById(R.id.imageButtonSearch);
+        user = findViewById(R.id.imageButtonUser);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlaylistPageActivity.this, SearchActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlaylistPageActivity.this, HotActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PlaylistPageActivity.this, Userpage.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

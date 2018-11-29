@@ -67,7 +67,7 @@ public class PlaylistActivity extends AppCompatActivity {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlaylistActivity.this, UserActivity.class);
+                Intent intent = new Intent(PlaylistActivity.this, Userpage.class);
                 startActivity(intent);
             }
         });
