@@ -33,7 +33,7 @@ public class HotActivity extends AppCompatActivity {
         avicii.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotActivity.this, SongActivity.class);
+                Intent intent = new Intent(HotActivity.this, PlaylistActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class HotActivity extends AppCompatActivity {
         world.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotActivity.this, SongActivity.class);
+                Intent intent = new Intent(HotActivity.this, PlaylistActivity.class);
                 startActivity(intent);
             }
         });
@@ -49,7 +49,7 @@ public class HotActivity extends AppCompatActivity {
         christmas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotActivity.this, SongActivity.class);
+                Intent intent = new Intent(HotActivity.this, PlaylistActivity.class);
                 startActivity(intent);
             }
         });
@@ -57,7 +57,7 @@ public class HotActivity extends AppCompatActivity {
         folklore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HotActivity.this, SongActivity.class);
+                Intent intent = new Intent(HotActivity.this, PlaylistActivity.class);
                 startActivity(intent);
             }
         });
