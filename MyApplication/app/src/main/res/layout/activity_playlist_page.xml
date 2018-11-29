@@ -18,7 +18,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/textView"
@@ -31,9 +32,11 @@
 
                 <ImageButton
                     android:id="@+id/partybtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/icon_zorpa" />
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/party"
+                    android:scaleType="fitCenter" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -43,13 +46,15 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <ImageButton
                     android:id="@+id/housebtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="207dp"
-                    app:srcCompat="@drawable/home_icon_" />
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/housemusic"
+                    android:scaleType="fitCenter"  />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -63,9 +68,11 @@
 
                 <ImageButton
                     android:id="@+id/jazzbtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="228dp"
-                    app:srcCompat="@drawable/inngangsmynd" />
+                    android:layout_width="216dp"
+                    android:layout_height="142dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/jazzpic"
+                    android:scaleType="fitCenter"  />
 
                 <TextView
                     android:id="@+id/textView9"

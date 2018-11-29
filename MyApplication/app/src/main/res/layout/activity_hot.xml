@@ -46,7 +46,7 @@
                     android:layout_width="216dp"
                     android:layout_height="142dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/icon_world_music"
+                    android:src="@drawable/worldmusic"
                     android:scaleType="fitCenter"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -75,7 +75,7 @@
                     android:id="@+id/folkLoreBtn"
                     android:layout_width="216dp"
                     android:layout_height="142dp"
-                    android:src="@drawable/icon_belarus_"
+                    android:src="@drawable/folklorepic"
                     android:background="@android:color/transparent"
                     android:scaleType="fitCenter"/>
                 <TextView
