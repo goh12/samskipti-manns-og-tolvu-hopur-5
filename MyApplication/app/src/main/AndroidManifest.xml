@@ -35,7 +35,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".PlaylistActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity
+            android:name=".SearchActivity"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
         <activity android:name=".UserActivity" />
         <activity android:name=".HotActivity" />
         <activity android:name=".Userpage" />
