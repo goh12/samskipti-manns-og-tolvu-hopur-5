@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -23,7 +24,7 @@ import exceptions.EkkertSkjalFinnstException;
 import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT;
 import static is.apisavia.isavia.myapplication.R.id.editTextUsername;
 
-public class RegisterActivity extends SameiginlegtActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     // SKILGREININGAR
     protected ImageView   start;
