@@ -113,6 +113,10 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
 =======
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_margin="30dp"
 >>>>>>> d41c00819aae32fdab5c41c6aed9f325b30dd1d5
                 android:background="@drawable/next" />
 
@@ -129,6 +133,7 @@
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
+                android:src="@drawable/volume_lower" />
 
             <SeekBar
                 android:id="@+id/volumeBar"
