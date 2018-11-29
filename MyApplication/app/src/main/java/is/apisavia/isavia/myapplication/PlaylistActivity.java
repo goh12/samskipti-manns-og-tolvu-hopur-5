@@ -23,6 +23,7 @@ public class PlaylistActivity extends AppCompatActivity {
     private ImageButton home;
     private ImageButton search;
     private ImageButton user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +72,6 @@ public class PlaylistActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     private void songTitleListMethod () {
