@@ -17,6 +17,7 @@ public class HotActivity extends AppCompatActivity {
     private ImageButton home;
     private ImageButton search;
     private ImageButton user;
+    // g
     private ImageButton avicii, world, christmas, folklore;
 
     @Override
